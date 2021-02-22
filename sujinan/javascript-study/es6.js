@@ -105,3 +105,54 @@
   console.log(dog);
   // Object는 Key가 같으면 마지막으로 복사한 오브젝트의 키값이 덮여쓰여진다.
 }
+
+/* Default Parameters */
+
+{
+  // 파라미터 옆에 default parameter 값 바로 적용 가능
+  function printMessage(message = "defalut message") {
+    /*
+      if (message = null) {
+          console.log('default message');
+      }
+    */
+    console.log(message);
+  }
+
+  printMessage("Hello World!");
+  printMessage();
+}
+
+/* Ternary Operator */
+{
+  const isCat = true;
+  {
+    let component;
+    if (isCat) {
+      component = "Dog";
+    } else {
+      component = "Cat";
+    }
+
+    console.log(component);
+  }
+
+  {
+    const component = isCat ? "Dog" : "Cat";
+    console.log(component);
+  }
+}
+
+/* Template Literals */
+{
+  const weather = "Sunny";
+  const temperature = "16";
+
+  console.log(
+    "Today weather is " + weather + " and temperature is " + temperature,
+  );
+
+  console.log(`Today weather is ${weather} and temperature is ${temperature}`);
+  // 문장에 따옴표가 아니라 역슬래쉬 사용하면 ${변수} 사용 가능
+  // 변수와 문자열을 + 로 이어주지 않아도 됨.
+}
