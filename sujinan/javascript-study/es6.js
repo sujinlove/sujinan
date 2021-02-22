@@ -1,5 +1,4 @@
 /* shorthand property names */
-
 {
   const shorthand_1 = {
     name: "Sujin",
@@ -25,7 +24,6 @@
 }
 
 /* desctructuring assignment */
-
 {
   //object
   const student = {
@@ -70,7 +68,6 @@
 }
 
 /* Spread Syntax */
-
 {
   const obj1 = { key: "key1" };
   const obj2 = { key: "key2" };
@@ -155,4 +152,94 @@
   console.log(`Today weather is ${weather} and temperature is ${temperature}`);
   // 문장에 따옴표가 아니라 역슬래쉬 사용하면 ${변수} 사용 가능
   // 변수와 문자열을 + 로 이어주지 않아도 됨.
+}
+
+// ES11
+
+/* Optional chaining */
+{
+  const person1 = {
+    name: "Sujin",
+    job: {
+      title: "S/W engineer",
+      manager: {
+        name: "Bob",
+      },
+    },
+  };
+
+  const person2 = {
+    name: "Bob",
+  };
+
+  {
+    function printManager(person) {
+      console.log(person.job.manager.name);
+    }
+
+    printManager(person1);
+    //printManager(person2);
+  }
+
+  {
+    function printManager(person) {
+      console.log(person.job?.manager?.name);
+      // person 안에 job이 있으면, job안에 manager가 있으면, manager안에 name이 있으면 출력
+      // 없으면 undefined
+    }
+    printManager(person1);
+    printManager(person2);
+  }
+}
+
+/* Nullsh  */
+
+// Logical OR operator
+// false: false, '', 0, null, undefined
+
+{
+  {
+    const name = "Sujin";
+    const userName = name || "Guest";
+
+    console.log(userName);
+  }
+
+  {
+    const name = null;
+    const userName = name || "Guest";
+    // || 을 사용할 경우 버그가 있을 가능성이 크다
+
+    console.log(userName);
+  }
+
+  {
+    const name = "";
+    const userName = name || "Guest";
+    // name에 '' 값이 할당되면 false로 간주 되어 Guest가 출력된다.
+    // 사용자가 name에 아무 값도 넣고 싶지 않아도 값이 Guest가 된다.
+
+    console.log(userName);
+  }
+
+  {
+    const num = 0;
+    const userNum = num || "undefined";
+    // num에 숫자 0이 할당 되어도, 0은 false로 간주 되기 때문에 undefined가 출력됨.
+
+    console.log(userNum);
+  }
+
+  {
+    const name = "";
+    const userName = name ?? "Guest";
+    // name에 값이 있으면 사용 / 없으면 Guest를 사용
+    // || OR 연산자와 조금 다름
+    console.log(userName);
+
+    const num = 0;
+    // num에 값이 있으면 사용 / 없으면 Guest를 사용
+    const userNum = num ?? "undefined";
+    console.log(userNum);
+  }
 }
