@@ -192,7 +192,7 @@
   }
 }
 
-/* Nullsh  */
+/* Nullsh Coalescing Operator*/
 
 // Logical OR operator
 // false: false, '', 0, null, undefined
