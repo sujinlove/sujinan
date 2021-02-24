@@ -64,7 +64,7 @@ const maxNumber = 5;
 // -> function도 다른 데이터 할당처럼 변수에 할당이 가능하고,
 // 또 그렇기 때문에 파라미터로 전달이 가능하고, 또 함수에서 리턴으로 function을 리턴할 수 도 있다.
 
-// Type 1. Number
+// Type 4-1. Number
 
 const count = 17; // integer
 const size = 17.1; // decimal number
@@ -84,7 +84,7 @@ console.log(infinity);
 console.log(negativeIntinity);
 console.log(nAn);
 
-// Type 2. String
+// Type 4-2. String
 
 const char = "c";
 const brendan = "brendan";
@@ -94,7 +94,7 @@ console.log(`value: ${greeting}, type: ${typeof greeting}`);
 const helloBob = `Hi ${brendan}!`; // template literals
 console.log(`value: ${helloBob}, type: ${typeof helloBob}`);
 
-// Type 3. Boolean
+// Type 4-3. Boolean
 // false: 0, null, undefined, NaN, ''
 // true: any other value
 
@@ -104,19 +104,19 @@ const test = 3 < 1; // false
 console.log(`value: ${canRead}, type: ${typeof canRead}`);
 console.log(`value: ${test}, type: ${typeof test}`);
 
-// Type 4. null
+// Type 4-4. null
 
 let nothing = null;
 console.log(`value: ${nothing}, type: ${typeof nothing}`);
 // null로 값이 할당 됨
 
-// Type 5. undefined
+// Type 4-5. undefined
 
 let x;
 console.log(`value: ${x}, type: ${typeof x}`);
 // 선언은 되었지만, 값이 정의되지 않음
 
-// Type 5. Symbol
+// Type 4-6. Symbol
 // create unique identifier for objects
 // 나중에 맵이나 자료구조에서 고유한 식별자가 필요하거나 아니면
 // 동시에 다발적으로 일어날 수 있는 코드에서 우선순위를 주고싶을 때, 고유한 식별사가 필요할 때 사용
@@ -125,3 +125,17 @@ const symbol1 = Symbol("id");
 const symbol2 = Symbol("id");
 
 console.log(symbol1 === symbol2); // false
+
+// 5. Dynamic typing: dynamically typed language
+// 런타임 / 프로그램이 동작할 때, 할당된 값에 따라서 타입이 변경될 수 있음
+let text = "hello";
+console.log(`value: ${text}, type: ${typeof text}`);
+
+text = 1;
+console.log(`value: ${text}, type: ${typeof text}`);
+
+text = "7" + 5;
+console.log(`value: ${text}, type: ${typeof text}`);
+
+text = "8" / "2";
+console.log(`value: ${text}, type: ${typeof text}`);
