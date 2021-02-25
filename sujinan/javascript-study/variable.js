@@ -1,6 +1,6 @@
 "use strict";
 
-// 2. Variable
+// 2. Variable rw(read/write)
 // let (added in ES6)
 
 let name = "sujin";
@@ -44,7 +44,7 @@ console.log(age);
 }
 console.log(age);
 
-// 3. Contants
+// 3. Contant r(read only)
 // favor immutable data type always for few reasons :
 // - security
 // - thread safety
