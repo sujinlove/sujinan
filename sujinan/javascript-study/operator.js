@@ -94,5 +94,84 @@ console.log(stringFive == numberFice);
 console.log(stringFive != numberFice);
 
 // === strict equlity , no type conversion
+// 타입까지 동일한지 체크하므로 코딩할떄 === 사용이 더 효율적
 console.log(stringFive === numberFice);
 console.log(stringFive !== numberFice);
+
+// object equality by reference
+const sujin1 = { name: "sujin" };
+const sujin2 = { name: "sujin" };
+const sujin3 = sujin1;
+
+console.log(sujin1 == sujin2);
+console.log(sujin1 === sujin2);
+console.log(sujin1 === sujin3);
+
+// equality puzzler
+console.log("equality puzzler");
+console.log(0 == false); // t
+console.log(0 === false); // f
+console.log("" == false); // t
+console.log("" === false); // f
+console.log(null == undefined); // f // t
+console.log(null === undefined); //f
+
+// 8. Contional Operators: if
+// if, else if, else
+
+const name = "dc";
+if (name === "dc") {
+  console.log("Welcome sujin");
+} else if (name === "coder") {
+  console.log("You are amazing coder");
+} else {
+  console.log("unknown");
+}
+
+// 9. Ternary Operator: ?
+// condition ? value1 : value2
+
+console.log(name === "sujin" ? "yes" : "no");
+
+// 10. Switch statment
+const browser = "Chrome";
+
+switch (browser) {
+  case "IE":
+    console.log("go away");
+    break;
+  case "Chrome":
+  case "Firefox":
+    console.log("love you!");
+    break;
+  default:
+    console.log("same all");
+    break;
+}
+
+// Loops
+// While loop, while the condition is truthy,
+// body code is executed.
+
+let i = 3;
+while (i > 0) {
+  console.log(`while: ${i}`);
+  i--;
+}
+
+do {
+  console.log(`do wihle: ${i}`);
+  i--;
+} while (i > 0);
+
+// for loop, for(begin; condition; step)
+for (i = 3; i > 0; i--) {
+  console.log(`for: ${i}`);
+}
+
+// nested loop
+for (let i = 0; i < 10; i++) {
+  for (let j = 0; j < 10; j++) {
+    console.log(`i: ${i} j: ${j}`);
+  }
+}
